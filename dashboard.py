@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import gdown
 from wordcloud import WordCloud
 import nltk
 from nltk.corpus import stopwords
@@ -14,14 +13,9 @@ import re
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
-# Download dataset dari Google Drive
-url = "https://drive.google.com/uc?id=1GNswqZr6Hlp03vTxvoavOSBuXl_nD4-F"
-file_path = "Dataset200rb.csv"
-gdown.download(url, file_path, quiet=False)
-
 # Load dataset dengan penanganan error
 try:
-    df = pd.read_csv(file_path, encoding="utf-8", on_bad_lines='skip', engine='python')
+    df = pd.read_csv("https://raw.githubusercontent.com/Fqih/Analisis-Big-Data-Fesmaro/refs/heads/main/Dataset/Dataset.csv", encoding="utf-8", on_bad_lines='skip', engine='python')
     if df.shape[1] == 3:
         df.columns = ['Kelas', 'Judul', 'Ulasan']
     else:
