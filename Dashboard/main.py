@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
 from collections import Counter
 import re
 
@@ -70,15 +69,6 @@ if mode == "Dashboard Visualisasi":
         st.pyplot(fig1)
     else:
         st.warning("⚠️ Tidak ada data untuk ditampilkan.")
-
-    # Word Cloud
-    st.subheader("☁️ Word Cloud Ulasan")
-    if not filtered_df.empty:
-        text = " ".join(filtered_df["Ulasan"])
-        wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text)
-        st.image(wordcloud.to_array())
-    else:
-        st.warning("⚠️ Tidak ada data untuk Word Cloud.")
 
     # Bigram Visualisasi
     st.subheader("🔗 Bigram Paling Umum")
