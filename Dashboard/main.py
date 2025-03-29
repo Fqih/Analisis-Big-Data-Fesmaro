@@ -6,7 +6,7 @@ import re
 
 # Sidebar - Pilih Mode
 st.sidebar.title("🔍 Navigasi")
-mode = st.sidebar.selectbox("Pilih Halaman", ["Dashboard Visualisasi")
+mode = st.sidebar.selectbox("Pilih Halaman", ["Dashboard Visualisasi"])
 
 # ===================== DASHBOARD VISUALISASI =====================
 if mode == "Dashboard Visualisasi":
