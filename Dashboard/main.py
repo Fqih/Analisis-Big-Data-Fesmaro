@@ -6,7 +6,7 @@ import re
 
 # Sidebar - Pilih Mode
 st.sidebar.title("🔍 Navigasi")
-mode = st.sidebar.selectbox("Pilih Halaman", ["Dashboard Visualisasi", "Prediksi Sentimen"])
+mode = st.sidebar.selectbox("Pilih Halaman", ["Dashboard Visualisasi")
 
 # ===================== DASHBOARD VISUALISASI =====================
 if mode == "Dashboard Visualisasi":
@@ -113,17 +113,3 @@ if mode == "Dashboard Visualisasi":
             st.pyplot(fig2)
     else:
         st.warning("⚠️ Tidak ada data untuk analisis kata umum.")
-
-# ===================== PREDIKSI SENTIMEN =====================
-elif mode == "Prediksi Sentimen":
-    st.title("🧠 Prediksi Sentimen Ulasan Produk Amazon")
-
-    judul = st.text_input("📝 Masukkan Judul Ulasan Produk Amazon:")
-    ulasan = st.text_area("🗒️ Masukkan Isi Ulasan Produk Amazon:")
-
-    if st.button("🔍 Prediksi"):
-        if judul and ulasan:
-            st.markdown("#### 🔮 Prediksi Sentimen:")
-            st.info("Model belum termuat. Silakan integrasikan model untuk melakukan prediksi.")
-        else:
-            st.warning("⚠️ Silakan masukkan **judul** dan **ulasan** terlebih dahulu.")
